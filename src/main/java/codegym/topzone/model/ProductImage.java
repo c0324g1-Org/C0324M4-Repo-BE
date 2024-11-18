@@ -3,6 +3,8 @@ package codegym.topzone.model;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.time.LocalDateTime;
+
 @Entity
 @Table(name = "product_image")
 @Data
@@ -20,4 +22,7 @@ public class ProductImage {
 
     @Column(name = "isShow")
     private boolean is_show;
+
+    private LocalDateTime created_at = LocalDateTime.now();
+    private LocalDateTime updated_at = LocalDateTime.now();
 }

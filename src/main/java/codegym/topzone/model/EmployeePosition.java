@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -24,4 +25,7 @@ public class EmployeePosition {
 
     @OneToMany(mappedBy = "position", fetch = FetchType.LAZY)
     private  List<Employee> employees;
+
+    private LocalDateTime created_at = LocalDateTime.now();
+    private LocalDateTime updated_at = LocalDateTime.now();
 }
