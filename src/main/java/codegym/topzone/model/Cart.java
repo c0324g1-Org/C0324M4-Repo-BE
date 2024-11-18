@@ -3,6 +3,7 @@ package codegym.topzone.model;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -22,4 +23,7 @@ public class Cart {
 
     @OneToMany(mappedBy = "cart")
     private List<CartItem> cartItems;
+
+    private LocalDateTime created_at = LocalDateTime.now();
+    private LocalDateTime updated_at = LocalDateTime.now();
 }

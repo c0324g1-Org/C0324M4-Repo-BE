@@ -2,6 +2,7 @@ package codegym.topzone.model;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,4 +18,7 @@ public class UserRole {
 
     @OneToMany(mappedBy = "role")
     private List<Account> accounts;
+
+    private LocalDateTime created_at = LocalDateTime.now();
+    private LocalDateTime updated_at = LocalDateTime.now();
 }

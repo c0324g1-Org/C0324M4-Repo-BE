@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 import org.apache.catalina.User;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,4 +25,7 @@ public class Account {
     @ManyToOne
     @JoinColumn(name = "role")
     private UserRole role;
+
+    private LocalDateTime created_at = LocalDateTime.now();
+    private LocalDateTime updated_at = LocalDateTime.now();
 }

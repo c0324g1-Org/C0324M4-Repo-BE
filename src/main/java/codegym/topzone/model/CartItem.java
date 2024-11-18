@@ -2,6 +2,8 @@ package codegym.topzone.model;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDateTime;
+
 @Entity
 @Table(name = "cart_item")
 public class CartItem {
@@ -19,4 +21,7 @@ public class CartItem {
 
     @Column(name = "quantity")
     private int quantity;
+
+    private LocalDateTime created_at = LocalDateTime.now();
+    private LocalDateTime updated_at = LocalDateTime.now();
 }

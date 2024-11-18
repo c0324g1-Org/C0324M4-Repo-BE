@@ -3,6 +3,7 @@ package codegym.topzone.model;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -18,4 +19,7 @@ public class BillStatus {
 
     @OneToMany(mappedBy = "billStatus")
     private List<Bill> bills;
+
+    private LocalDateTime created_at = LocalDateTime.now();
+    private LocalDateTime updated_at = LocalDateTime.now();
 }
